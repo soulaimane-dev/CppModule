@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 14:15:46 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:46:40 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/24 15:27:01 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/24 16:47:45 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
-	:type("Animal")
+WrongAnimal::WrongAnimal()
+	: type("WrongAnimal")
 {
-	std::cout << "Animal Default Constructor Called" << std::endl;
+	std::cout << "WrongAnimal Default Constructor Called" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal Destructor Called" << std::endl;
+	std::cout << "WrongAnimal Destructor Called" << std::endl;
 }
 
-Animal::Animal(Animal &other)
+WrongAnimal::WrongAnimal(WrongAnimal &other)
 {
 	*this = other;
 }
 
-Animal	&Animal::operator=(const Animal &other)
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &other)
 {
 	if (this != &other)
 	{
@@ -37,12 +37,12 @@ Animal	&Animal::operator=(const Animal &other)
 	return *this;
 }
 
-void	Animal::makeSound() const
+void	WrongAnimal::makeSound() const
 {
-	std::cout << "Animal Sound" << std::endl;
+	std::cout << "WrongAnimal Sound!" <<std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	WrongAnimal::getType() const
 {
-	return  this->type;
+	return this->type;
 }

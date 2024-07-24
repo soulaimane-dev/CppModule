@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 08:38:34 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 09:31:06 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/24 14:24:22 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/24 16:47:14 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ Dog	&Dog::operator=(const Dog &other)
 	{
 		this->type = other.type;
 	}
-	return  *this;
+	return *this;
 }
 
 
-void	Dog::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Woof woof!" << std::endl;
+	std::cout << "Dog sound: Woof Woof!";
 }
 
 std::string	Dog::getType() const
 {
-	return this->type;
+	return  this->type;
 }

@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:51:36 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:31:55 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/07/24 17:58:41 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,44 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+
 // void	f()
 // {
 // 	system("leaks Animal");
 // }
 
-int	main()
+int main()
 {
-	Animal *a = new Animal;
-	Animal *b = new Cat;
-	Animal *c = new Dog;
-
 	// atexit(f);
 
-	std::cout << a->getType() << " : ";
-	a->makeSound();
-	std::cout << b->getType() << " : ";
-	b->makeSound();
-	std::cout << c->getType() << " : ";
-	c->makeSound();
+	Animal *a[20];
 
-	delete a;
-	delete b;
-	delete c;
+	for (int i = 0; i < 20; i++)
+	{
+		if (i < 10)
+		{
+			a[i] = new Dog;
+		}
+		else
+		{
+			a[i] = new Cat;
+		}
+	}
 
-	std::cout << "\n=================\n\n";
 
-	WrongAnimal *wa = new WrongAnimal;
-	WrongAnimal *wb = new WrongCat;
-	std::cout << wa->getType() << " : ";
-	wa->makeSound();
-	std::cout << wb->getType() << " : ";
-	wb->makeSound();
+	for (int i = 0; i < 20; i++) {
+		delete a[i];
+	}
 
-	delete wa;
-	delete wb;
+	// const Animal* j = new Dog();
+	// const Animal* i = new Cat();
+	// std::cout << j->getType() << " : ";
+	// j->makeSound();
+	// std::cout << i->getType() << " : ";
+	// i->makeSound();
+	// delete j;
+	// delete i;
+
+	return 0;
 }
+

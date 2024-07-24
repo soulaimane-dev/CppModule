@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:33:59 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:53:20 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:54:07 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 class	Cat : public Animal
 {
+	private:
+		Brain *brain;
 	public:
 		Cat();
 		~Cat();

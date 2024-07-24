@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 14:33:59 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:53:20 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/24 16:34:09 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/24 16:51:39 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
-class	Cat : public Animal
+class	Brain
 {
 	public:
-		Cat();
-		~Cat();
-		Cat(Cat &other);
-		Cat &operator=(const Cat &other);
-		void	makeSound() const;
-		std::string getType() const;
+		std::string	ideas[100];
+		Brain();
+		~Brain();
+		Brain(Brain	&other);
+		Brain	&operator=(const Brain &other);
 };
 
 #endif

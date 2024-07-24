@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 08:38:40 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 09:30:44 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/24 14:33:53 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/24 16:46:50 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Cat::Cat()
 {
-	this->type = "Cat";
-	std::cout << "Cat Constructor Called" << std::endl;
+	type = "Cat";
+	std::cout << "Cat Default Constructor Called" << std::endl;
+}
+
+Cat::~Cat()
+{
+	std::cout << "Cat Destrcutor Called" << std::endl;
 }
 
 Cat::Cat(Cat &other)
 {
 	*this = other;
-}
-
-Cat::~Cat()
-{
-	std::cout << "Cat Destructor Called" << std::endl;
 }
 
 Cat	&Cat::operator=(const Cat &other)
@@ -34,15 +34,15 @@ Cat	&Cat::operator=(const Cat &other)
 	{
 		this->type = other.type;
 	}
-	return  *this;
+	return *this;
 }
 
 void	Cat::makeSound() const
 {
-	std::cout << "Meow Meow!" << std::endl;
+	std::cout << "Cat sound: Meow Meow!" << std::endl;
 }
 
 std::string	Cat::getType() const
 {
-	return this->type;
+	return  this->type;
 }

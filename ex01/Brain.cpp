@@ -1,48 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 14:15:46 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:46:40 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/24 16:34:12 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/24 16:51:36 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Brain.hpp"
 
-Animal::Animal()
-	:type("Animal")
+Brain::Brain()
 {
-	std::cout << "Animal Default Constructor Called" << std::endl;
+	for(int i = 0; i < 100; i++)
+	{
+		ideas[i] = "no idea";
+	}
+	std::cout << "Brain Default Contructor Called" << std::endl;
 }
 
-Animal::~Animal()
+Brain::~Brain()
 {
-	std::cout << "Animal Destructor Called" << std::endl;
+	std::cout << "Brain Destructor Called" << std::endl;
 }
 
-Animal::Animal(Animal &other)
+Brain::Brain(Brain &other)
 {
 	*this = other;
 }
 
-Animal	&Animal::operator=(const Animal &other)
+Brain	&Brain::operator=(const Brain &other)
 {
 	if (this != &other)
 	{
-		this->type = other.type;
+		for(int i = 0; i < 100; i++)
+		{
+			this->ideas[i] = other.ideas[0];
+		}
 	}
 	return *this;
 }
 
-void	Animal::makeSound() const
-{
-	std::cout << "Animal Sound" << std::endl;
-}
-
-std::string	Animal::getType() const
-{
-	return  this->type;
-}

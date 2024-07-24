@@ -1,48 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 14:15:46 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:46:40 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/24 14:33:53 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/24 17:36:30 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-Animal::Animal()
-	:type("Animal")
+Cat::Cat()
 {
-	std::cout << "Animal Default Constructor Called" << std::endl;
+	type = "Cat";
+	brain = new Brain();
+	std::cout << "Cat Default Constructor Called" << std::endl;
 }
 
-Animal::~Animal()
+Cat::~Cat()
 {
-	std::cout << "Animal Destructor Called" << std::endl;
+	delete brain;
+	std::cout << "Cat Destrcutor Called" << std::endl;
 }
 
-Animal::Animal(Animal &other)
+Cat::Cat(Cat &other)
 {
 	*this = other;
 }
 
-Animal	&Animal::operator=(const Animal &other)
+Cat	&Cat::operator=(const Cat &other)
 {
 	if (this != &other)
 	{
 		this->type = other.type;
+		this->brain = new Brain(*other.brain);
 	}
 	return *this;
 }
 
-void	Animal::makeSound() const
+void	Cat::makeSound() const
 {
-	std::cout << "Animal Sound" << std::endl;
+	std::cout << "Cat sound: Meow Meow!" << std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	Cat::getType() const
 {
 	return  this->type;
 }
