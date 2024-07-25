@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 14:15:46 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/25 09:28:47 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/25 10:38:59 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/25 15:02:26 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Ice.hpp"
 
-Animal::Animal()
-	:type("Animal")
+Ice::Ice()
 {
-	std::cout << "Animal Default Constructor Called" << std::endl;
+	this->type = "ice";
+	std::cout << "Ice Constructor Called" << std::endl;
 }
 
-Animal::~Animal()
+Ice::~Ice()
 {
-	std::cout << "Animal Destructor Called" << std::endl;
+	std::cout << "Ice Destructor Called" << std::endl;
 }
 
-Animal::Animal(Animal &other)
+Ice::Ice(Ice &other)
 {
 	*this = other;
 }
 
-Animal	&Animal::operator=(const Animal &other)
+Ice	&Ice::operator=(const Ice &other)
 {
 	if (this != &other)
 	{
@@ -37,7 +37,18 @@ Animal	&Animal::operator=(const Animal &other)
 	return *this;
 }
 
-std::string	Animal::getType() const
+AMateria	*Ice::clone() const
 {
-	return  this->type;
+	return new Ice();
+}
+
+
+std::string const & Ice::getType() const
+{
+	return type;
+}
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " + target.getName() +" *" << std::endl;
 }
