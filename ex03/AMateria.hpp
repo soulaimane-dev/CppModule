@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 09:47:21 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/25 15:59:42 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/25 16:43:09 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/25 17:37:27 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,18 @@
 class AMateria
 {
 	protected:
-		std::string	type;
+		std::string type;
 	public:
 		AMateria();
 		AMateria(AMateria &other);
+		AMateria(std::string const & type);
 		virtual ~AMateria();
 		AMateria &operator=(const AMateria &other);
 
-		AMateria(std::string const & type);
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
+
 
 #endif

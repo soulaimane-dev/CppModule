@@ -5,27 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 11:15:37 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/25 15:02:40 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/25 17:16:46 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/25 18:16:07 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure()
+	: AMateria("cure")
 {
-	type = "cure";
-	std::cout << "Cure Default Constructor Called" << std::endl;
-}
-
-Cure::~Cure()
-{
-	std::cout << "Cure Default Destructor Called" << std::endl;
+	this->type = "cure";
+	std::cout << "Cure Constructor Called" << std::endl;
 }
 
 Cure::Cure(Cure &other)
 {
-	*this = other;
+	this->type = other.type;
 }
 
 Cure	&Cure::operator=(const Cure &other)
@@ -37,15 +33,21 @@ Cure	&Cure::operator=(const Cure &other)
 	return *this;
 }
 
-AMateria	*Cure::clone() const
+Cure::~Cure()
+{
+	std::cout << "Cure Destructer Called" << std::endl;
+}
+
+std::string	const &Cure::getType() const
+{
+	return this->type;
+}
+
+Cure	*Cure::clone() const
 {
 	return new Cure();
 }
 
-std::string const & Cure::getType() const
-{
-	return type;
-}
 
 void	Cure::use(ICharacter& target)
 {

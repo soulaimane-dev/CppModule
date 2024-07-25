@@ -5,27 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 10:38:59 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/25 15:02:26 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/25 16:59:41 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/25 18:15:31 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 Ice::Ice()
+	: AMateria("ice")
 {
 	this->type = "ice";
 	std::cout << "Ice Constructor Called" << std::endl;
 }
 
-Ice::~Ice()
-{
-	std::cout << "Ice Destructor Called" << std::endl;
-}
-
 Ice::Ice(Ice &other)
 {
-	*this = other;
+	this->type = other.type;
 }
 
 Ice	&Ice::operator=(const Ice &other)
@@ -37,15 +33,19 @@ Ice	&Ice::operator=(const Ice &other)
 	return *this;
 }
 
-AMateria	*Ice::clone() const
+Ice::~Ice()
 {
-	return new Ice();
+	std::cout << "Ice Destructer Called" << std::endl;
 }
 
-
-std::string const & Ice::getType() const
+std::string	const &Ice::getType() const
 {
-	return type;
+	return this->type;
+}
+
+Ice	*Ice::clone() const
+{
+	return new Ice();
 }
 
 void	Ice::use(ICharacter& target)

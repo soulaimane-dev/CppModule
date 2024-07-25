@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 11:53:22 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/25 15:57:23 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/25 17:24:34 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/25 18:09:47 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include "AMateria.hpp"
+// #include "AMateria.hpp"
+#include <iostream>
+class AMateria;
 
 class ICharacter
 {
@@ -26,4 +28,3 @@ class ICharacter
 };
 
 #endif
-

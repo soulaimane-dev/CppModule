@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 13:05:01 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/25 15:13:54 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/07/25 18:10:27 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/07/25 20:04:09 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-#include "AMateria.hpp"
+
 
 Character::Character()
 {
 	this->name = "Default";
 	for (int i = 0; i < 4; i++)
 	{
-		inventory[i] = nullptr;
+		slots[i] = nullptr;
 	}
 	std::cout << "Character Default Constructor Called" << std::endl;
 }
@@ -28,7 +28,7 @@ Character::Character(std::string name)
 	this->name = name;
 	for (int i = 0; i < 4; i++)
 	{
-		inventory[i] = nullptr;
+		slots[i] = nullptr;
 	}
 	std::cout << "Character Constructor Called" << std::endl;
 }
@@ -37,8 +37,8 @@ Character::Character(Character &other)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (other.inventory[i])
-			this->inventory[i] = other.inventory[i]->clone();
+		if (other.slots[i])
+			this->slots[i] = other.slots[i]->clone();
 	}
 	this->name = other.name;
 }
@@ -49,8 +49,8 @@ Character	&Character::operator=(const Character &other)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (other.inventory[i])
-				this->inventory[i] = other.inventory[i]->clone();
+			if (other.slots[i] != nullptr)
+				this->slots[i] = other.slots[i]->clone();
 		}
 		this->name = other.name;
 	}
@@ -62,7 +62,7 @@ Character::~Character()
 	std::cout << "Character Destructor Called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		delete inventory[i];
+		delete slots[i];
 	}
 }
 
@@ -70,9 +70,9 @@ void	Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (inventory[i] != nullptr)
+		if (slots[i] == nullptr)
 		{
-			inventory[i] = m;
+			slots[i] = m;
 			break ;
 		}
 	}
@@ -82,7 +82,7 @@ void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
 	{
-		inventory[idx] = nullptr;
+		slots[idx] = nullptr;
 	}
 }
 
@@ -95,7 +95,12 @@ std::string	const &Character::getName() const
 void	Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx < 4)
-		this->inventory[idx]->use(target);
+	{
+		if (slots[idx] != nullptr)
+		{
+			this->slots[idx]->use(target);
+		}
+	}
 	else
 		std::cout << "materia index: " << idx << " is empty" << std::endl;
 }
