@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:33:59 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/07/24 16:53:20 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:04:47 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
-#include "Brain.hpp"
+
 
 class	Cat : public Animal
 {
