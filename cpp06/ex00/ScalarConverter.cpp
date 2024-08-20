@@ -6,26 +6,25 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:08:14 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/08/19 15:42:43 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:41:17 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <_ctype.h>
-#include <cctype>
 #include <iostream>
 #include <sstream>
 
 string	strTrim(string s1)
 {
-	for (int i = 0; i < s1.length(); i++) {
+	int len = static_cast<int>(s1.length());
+	for (int i = 0; i < len; i++) {
 		if (s1[i] != ' ')
 		{
-			s1 = s1.substr(i, s1.length() - i);
+			s1 = s1.substr(i, len - i);
 			break;
 		}
 	}
-	for (int i = s1.length() - 1; i >= 0; i--) {
+	for (int i = len - 1; i >= 0; i--) {
 		if (s1[i] != ' ')
 		{
 			s1 = s1.substr(0, i + 1);
@@ -52,12 +51,13 @@ bool	checkIfInt(string value)
 bool	checkIfFloat(string	value)
 {
 	int	i = 0;
+	int len = static_cast<int>(value.length());
 	int	nbrOfPoint = 0;
 	if (value == ".f" || value == ".F" || value == "-.f" || value == "-.F")
 		return false;
 	if (value[0] == '+' || value[0] == '-')
 		i = 1;
-	while (i < value.length() - 1)
+	while (i < len - 1)
 	{
 		if (!isdigit(value[i]) && value[i] != '.')
 			return false;

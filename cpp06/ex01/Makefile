@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/20 13:35:39 by sbouabid          #+#    #+#              #
-#    Updated: 2024/08/20 13:36:20 by sbouabid         ###   ########.fr        #
+#    Created: 2024/08/20 13:33:33 by sbouabid          #+#    #+#              #
+#    Updated: 2024/08/20 13:34:12 by sbouabid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ScalarConverter
-SRCF = main.cpp ScalarConverter.cpp
+NAME = Serializer
+SRCF = main.cpp Serializer.cpp
 RM = rm -f
 OBJF = $(SRCF:.cpp=.o)
-HEADERS = ScalarConverter.hpp
+HEADERS = Serializer.hpp
 
 all: $(NAME)
 
