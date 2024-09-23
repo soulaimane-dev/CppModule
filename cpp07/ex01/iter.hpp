@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/23 13:32:33 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/09/23 13:32:51 by sbouabid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ITER_HPP
 #define ITER_HPP
 
 #include <iostream>
-
-using namespace std;
 
 template <typename T, typename F>
 void	iter(T *arr, size_t size, F func)
@@ -17,7 +27,7 @@ void	iter(T *arr, size_t size, F func)
 template <typename T>
 void	printElement(T element)
 {
-	cout << element << endl;
+	std::cout << element << std::endl;
 }
 
 template <typename T>

@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/23 13:32:06 by sbouabid          #+#    #+#              #
-#    Updated: 2024/09/23 13:32:08 by sbouabid         ###   ########.fr        #
+#    Created: 2024/09/23 13:20:05 by sbouabid          #+#    #+#              #
+#    Updated: 2024/09/23 13:20:38 by sbouabid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = templates
+NAME = array
 SRCF = main.cpp
 RM = rm -f
 OBJF = $(SRCF:.cpp=.o)
-HEADERS = whatever.hpp
+HEADERS = Array.hpp
 
 all: $(NAME)
 
