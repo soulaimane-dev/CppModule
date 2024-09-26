@@ -1,10 +1,23 @@
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/26 11:17:08 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/09/26 15:34:23 by sbouabid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef EASY_FIND_HPP
+#define EASY_FIND_HPP
 
 #include <algorithm>
 #include <iostream>
+#include <vector>
 
-class	error : public std::exception
+class	couldntFindIt : public std::exception
 {
 	const char *what() const throw()
 	{
@@ -13,14 +26,16 @@ class	error : public std::exception
 };
 
 template <typename T>
-typename T::iterator	easyfind(T &first, int second)
+typename T::iterator	easyfind(T& container, int find)
 {
-	typename T::iterator it = std::find(first.begin(), first.end(), second);
-	if (it == first.end())
+	typename T::iterator it = std::find(container.begin(), container.end(), find);
+
+	if (it == container.end())
 	{
-		throw error();
+		throw couldntFindIt();
 	}
 	return it;
 }
+
 
 #endif

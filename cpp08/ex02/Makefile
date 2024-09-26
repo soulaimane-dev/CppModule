@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/26 11:17:12 by sbouabid          #+#    #+#              #
-#    Updated: 2024/09/26 15:37:05 by sbouabid         ###   ########.fr        #
+#    Created: 2024/09/26 18:20:16 by sbouabid          #+#    #+#              #
+#    Updated: 2024/09/26 18:20:46 by sbouabid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = easyfind
+NAME = MutantStack
 SRCF = main.cpp
 RM = rm -f
 OBJF = $(SRCF:.cpp=.o)
-HEADERS = easyfind.hpp
+HEADERS = MutantStack.hpp
 
 all: $(NAME)
 

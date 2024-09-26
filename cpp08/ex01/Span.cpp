@@ -1,31 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/26 15:38:28 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/09/26 16:01:07 by sbouabid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
-#include <algorithm>
-#include <cstddef>
 
-Span::Span(un_int n)
-	: _n(n)
-	{
-		_arr.reserve(n);
-		std::cout << "Constructor Called" << std::endl;
-	}
-
-Span::Span(const Span &other)
-	: _n(other._n)
+Span::Span(un_int N)
+	: _N(N)
 {
-	*this = other;
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "Constructor Called" << std::endl;
+	span.reserve(_N);
 }
 
-Span	&Span::operator=(const Span &other)
+Span::Span(const Span &other)
+	: _N(other._N)
 {
-	std::cout << "Copy Assignment Called" << std::endl;
+	*this = other;
+}
+
+Span&	Span::operator=(const Span &other)
+{
 	if (this != &other)
 	{
-		this->_n = other._n;
-		_arr.reserve(_n);
-		for (size_t i = 0; i < other._arr.size(); i++)
+		this->_N = other._N;
+		span.reserve(_N);
+		for (size_t i = 0; i < other.span.size(); i++)
 		{
-			_arr[i] = other._arr[i];
+			span[i] = other.span[i];
 		}
 	}
 	return *this;
@@ -46,40 +54,41 @@ const char * Span::errorCalculateSpan::what() const throw()
 	return "Not enough numbers to calculate shortest span.";
 }
 
+
 void	Span::addNumber(int nbr)
 {
-	if (_arr.size() >= _n)
+	if (span.size() == _N)
 	{
 		throw errorMaxSpan();
 	}
-	_arr.push_back(nbr);
+	span.push_back(nbr);
 }
+
 
 int	Span::longestSpan()
 {
-	if (_arr.size() < 2)
+	if (span.size() < 2)
 	{
 		throw errorCalculateSpan();
 	}
-	std::sort(_arr.begin(), _arr.end());
-	return (_arr[_arr.size() - 1] - _arr[0]);
+	std::sort(span.begin(), span.end());
+	return (span[span.size() - 1] - span[0]);
 }
 
 int	Span::shortestSpan()
 {
-	int min = _arr[_arr.size() - 1];
-	if (_arr.size() < 2)
+	int min = span[span.size() - 1];
+	if (span.size() < 2)
 	{
 		throw errorCalculateSpan();
 	}
-	std::sort(_arr.begin(), _arr.end());
-	for (size_t i = 0; i < _arr.size() - 1; i++)
+	std::sort(span.begin(), span.end());
+	for (size_t i = 0; i < span.size() - 1; i++)
 	{
-		if ((_arr[i + 1] - _arr[i]) < min)
+		if ((span[i + 1] - span[i]) < min)
 		{
-			min = _arr[i + 1] - _arr[i];
+			min = span[i + 1] - span[i];
 		}
 	}
 	return min;
 }
-
