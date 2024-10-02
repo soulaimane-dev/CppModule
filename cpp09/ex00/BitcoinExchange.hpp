@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:01 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/10/01 16:10:55 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:42:39 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@
 
 typedef std::string st;
 
-bool	BitcoinExchange(st file);
+void	BitcoinExchange(st file);
+
+struct	checkTimeIfValid_st
+{
+	st	s_year;
+	st	s_month;
+	st	s_day;
+	int	year;
+	int	month;
+	int	day;
+};
 
 #endif
