@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:01 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/10/01 17:42:39 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:22:40 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <map>
 #include <fstream>
+#include <sstream>
 
 typedef std::string st;
 

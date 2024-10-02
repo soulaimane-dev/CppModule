@@ -6,14 +6,12 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:27:28 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/10/02 12:15:48 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:40:31 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <map>
-#include <sstream>
-#include <string>
+
 
 void	readDataFromFileCSV(std::ifstream& File, std::map<st, double>& Data)
 {
@@ -44,6 +42,11 @@ bool	checkTimeIfValid(st TimeLine)
 	time.s_month = TimeLine.substr(5, 2);
 	time.s_day = TimeLine.substr(8, 2);
 	if (TimeLine[4] !='-' || TimeLine[7] != '-')
+	{
+		std::cout << "Error: Time not valid" << std::endl;
+		return false;
+	}
+	if (!(TimeLine[6] >= '0' && TimeLine[6] <= '9') || !(TimeLine[9] >= '0' && TimeLine[9] <= '9') )
 	{
 		std::cout << "Error: Time not valid" << std::endl;
 		return false;
