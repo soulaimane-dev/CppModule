@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:27:28 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/10/02 14:40:31 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:39:59 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ bool	checkValueIfValid(st value, st line)
 	}
 
 	ss >> caster;
-	if (caster > 2147483647)
+	if (caster > 1000)
 	{
 		std::cout << "Error: too large a number." << std::endl;
 		return false;
