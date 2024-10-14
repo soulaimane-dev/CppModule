@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 15:51:44 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/10/12 15:34:05 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/10/14 07:59:12 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Pmergeme {
 		bool	checkIfValidNumber(std::string nbr);
 		void	convertToInt();
 		void	mergeInsertVector();
-
+		void	FordJohnsonVector(std::vector<std::pair<int, int> > &pairVec);
 	public:
 		Pmergeme();
 		void	fullArr(int ac, char **av);

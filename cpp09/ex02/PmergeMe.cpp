@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 15:51:41 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/10/12 15:44:34 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/10/14 07:58:37 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	Pmergeme::fullArr(int ac, char **av)
 
 bool	Pmergeme::checkIfValidNumber(std::string nbr)
 {
-	for (int i = 0; i < nbr.length(); i++)
+	for (size_t i = 0; i < nbr.length(); i++)
 	{
 		if (i == 0 && nbr[i] == '+')
 			i++;
@@ -58,6 +58,12 @@ void	Pmergeme::convertToInt()
 		vec.push_back(newValue);
 	}
 }
+
+void	Pmergeme::FordJohnsonVector(std::vector<std::pair<int, int> > &pairVec)
+{
+
+}
+
 
 void	Pmergeme::mergeInsertVector()
 {
@@ -84,15 +90,11 @@ void	Pmergeme::mergeInsertVector()
 			std::swap(pairVec[i].first, pairVec[i].second);
 	}
 	std::sort(pairVec.begin(), pairVec.end());
-	for (int i = 0; i < x / 2 ; i++)
-	{
-		std::cout << pairVec[i].first << std::endl;
-	}
 }
 
 void	Pmergeme::startParsing()
 {
-	for (int i = 0; i < arr1.size(); i++)
+	for (size_t i = 0; i < arr1.size(); i++)
 	{
 		if (!checkIfValidNumber(arr1[i]))
 		{
