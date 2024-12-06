@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:59:49 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/12/05 15:52:15 by sbouabid         ###   ########.fr       */
+/*   Updated: 2024/12/06 18:26:38 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	ReversePolishNotation
 		ReversePolishNotation(st line);
 		// ~ReversePolishNotation();
 		void	rpn();
+		int		checkIfOperation(char o);
 
 };
 
