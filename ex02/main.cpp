@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 14:54:06 by sbouabid          #+#    #+#             */
-/*   Updated: 2024/12/10 09:21:58 by sbouabid         ###   ########.fr       */
+/*   Created: 2024/12/07 09:31:17 by sbouabid          #+#    #+#             */
+/*   Updated: 2024/12/11 10:36:29 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-#define RPN_HPP
-
+#include "PmergeMe.hpp"
 #include <iostream>
-#include <stack>
-#include <string>
-typedef std::string st;
 
-void	ReversePolishNotation(st &value);
-
-#endif
+int	main(int ac, char **av)
+{
+	if (ac < 2)
+	{
+		std::cerr << "Error: the program must take one argument." << std::endl;
+		return 1;
+	}
+	else if (ac ==2)
+	{
+		std::cerr << "Error: you can sort one number." << std::endl;
+		return 1;
+	}
+	try {
+		PmergeMe algo(av);
+		algo.run();
+	} catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+}
